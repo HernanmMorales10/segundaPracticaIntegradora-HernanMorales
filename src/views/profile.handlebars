@@ -1,0 +1,18 @@
+<form method="get" action="/api/sessions/logout">
+    <h1>Bienvenido</h1>
+    <p>Bienvenido {{first_name}} {{last_name}}</p>
+    <p>Nivel de usuario: {{role}}</p>
+    <p>Email: {{email}}</p>
+    <p>Edad: {{age}}</p>
+    <div>
+        <strong>Cart:</strong>
+        {{#each carts}}
+        {{#with cart}}
+        {{#each products}}
+        <p>{{this.product.nombre}} - {{this.product.categoria}} - Cantidad: {{this.quantity}}</p>
+        {{/each}}
+        {{/with}}
+        {{/each}}
+    </div>
+    <button type="submit">Logout</button>
+</form>
